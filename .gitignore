@@ -1,0 +1,16 @@
+.env
+/mysql-5.7/data/**
+!/mysql-5.7/data/.gitkeep
+/mysql-5.7/dump/**
+!/mysql-5.7/dump/.gitkeep
+/mysql/logs/**
+/.ssh/**
+!/.ssh/.gitkeep
+/nginx/logs/**
+!/nginx/logs/.gitkeep
+
+/projects/**
+!/projects/.gitkeep
+
+.idea/
+.DS_Store
