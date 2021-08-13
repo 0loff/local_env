@@ -1,6 +1,6 @@
 ARG DOCKER_PHP_VERSION
 
-FROM php:${DOCKER_PHP_VERSION}-fpm-alpine
+FROM php:${DOCKER_PHP_VERSION}-fpm-alpine3.13
 
 ARG DOCKER_PHP_ENABLE_XDEBUG='off'
 ARG TZ='UTC'
@@ -57,6 +57,7 @@ RUN apk add --update --no-cache icu-libs \
         supervisor \
         su-exec \
         wget \
+        mc \
         nodejs \
         npm
 
@@ -64,16 +65,14 @@ RUN apk add --update --no-cache icu-libs \
 RUN php -m && \
     docker-php-ext-configure bcmath --enable-bcmath && \
     docker-php-ext-configure gd \
-        --with-freetype-dir=/usr/include/ \
-        --with-jpeg-dir=/usr/include/ \
-        --with-png-dir=/usr/include/ && \
+        --with-freetype=/usr/include/ \
+        --with-jpeg=/usr/include/ && \
     docker-php-ext-configure gettext && \
     docker-php-ext-configure intl --enable-intl && \
     docker-php-ext-configure opcache --enable-opcache && \
     docker-php-ext-configure pcntl --enable-pcntl && \
     docker-php-ext-configure sockets --enable-sockets && \
     docker-php-ext-configure soap && \
-    docker-php-ext-configure zip --enable-zip --with-libzip && \
     docker-php-ext-install exif \
         mysqli \
         opcache \

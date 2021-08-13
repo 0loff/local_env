@@ -1,9 +1,9 @@
 .env
-/mysql-5.7/data/**
-!/mysql-5.7/data/.gitkeep
-/mysql-5.7/dump/**
-!/mysql-5.7/dump/.gitkeep
-/mysql/logs/**
+/mysql-8/data/**
+!/mysql-8/data/.gitkeep
+/mysql-8/dump/**
+!/mysql-8/dump/.gitkeep
+/mysql-8/logs/**
 /.ssh/**
 !/.ssh/.gitkeep
 /nginx/logs/**
